@@ -10,13 +10,13 @@ public class Clickable : MonoBehaviour
 
     void Start()
     {
-        foreach (Elements element in Enum.GetValues(typeof(Elements)))
-        {
-            foreach(Elements element2 in Enum.GetValues(typeof(Elements)))
-            {
-                ElementInteraction.ElementDamageMultiplier(element, element2);
-            }
-        }
+        //foreach (Elements element in Enum.GetValues(typeof(Elements)))
+        //{
+        //    foreach(Elements element2 in Enum.GetValues(typeof(Elements)))
+        //    {
+        //        ElementInteraction.ElementDamageMultiplier(element, element2);
+        //    }
+        //}
     }
 
     void Update()

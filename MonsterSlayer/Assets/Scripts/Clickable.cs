@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 public class Clickable : MonoBehaviour
 {
     [SerializeField] Vector3 touchArea;
+    [SerializeField] Enemy enemy;
+    [SerializeField] Player player;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class Clickable : MonoBehaviour
 
             if (IsInTouchArea(mousePos))
             {
+                enemy.OnTakeDamage(enemy.calculateDamage(player, enemy, player.element, enemy.element));
                 Debug.Log(mousePos);
             }
         }

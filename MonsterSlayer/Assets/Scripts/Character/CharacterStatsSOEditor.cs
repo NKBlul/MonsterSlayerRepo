@@ -26,6 +26,7 @@ public class CharacterStatsSOEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
+        EditorGUILayout.PropertyField(element);
         EditorGUILayout.PropertyField(names);
         EditorGUILayout.PropertyField(level);
         EditorGUILayout.PropertyField(health);

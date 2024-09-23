@@ -27,7 +27,7 @@ public class BaseCharacter : MonoBehaviour
     public virtual void OnTakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log(health);
+        Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
         if (health <= 0)
         {
             OnDie();

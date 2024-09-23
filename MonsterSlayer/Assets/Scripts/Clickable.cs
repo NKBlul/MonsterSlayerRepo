@@ -31,7 +31,7 @@ public class Clickable : MonoBehaviour
 
             if (IsInTouchArea(mousePos))
             {
-                enemy.OnTakeDamage(enemy.calculateDamage(player, enemy, player.element, enemy.element));
+                player.DealDamage(enemy);
                // Debug.Log(mousePos);
             }
         }

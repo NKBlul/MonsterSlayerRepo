@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : BaseCharacter
 {
     public PlayerStatsSO playerStats;
+    public WeaponSO equippedWeapon;
 
     public float currentXP;
     public float xpNeededToLevelUp;
@@ -30,6 +31,31 @@ public class Player : BaseCharacter
         xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
     }
 
+    public void EquipWeapon(WeaponSO weapon)
+    {
+        equippedWeapon = weapon;
+        attack = playerStats.attack + equippedWeapon.weaponDamage; // Add weapon attack to player's attack
+        Debug.Log($"Equipped {weapon.weaponName} with {equippedWeapon.weaponDamage} attack power.");
+    }
+
+    public void DealDamage(Enemy enemy)
+    {
+        Elements elementUsed;
+
+        if (equippedWeapon == null)
+        {
+            elementUsed = this.element;
+        }
+        else
+        {
+            elementUsed = equippedWeapon.weaponElements;
+        }
+
+        // Calculate the damage using the weapon's attack power and element
+        float damage = calculateDamage(this, enemy, elementUsed, enemy.element);
+        enemy.OnTakeDamage(damage);
+    }
+
     public void GainXP(float xp)
     {
         float newXP = currentXP + xp;
@@ -47,7 +73,7 @@ public class Player : BaseCharacter
                 GainXP(remainingXP);
             }
         }
-        Debug.Log(currentXP);
+        Debug.Log("CurrentXP: " + currentXP);
     }
 
     public void SubscribeToEnemy(Enemy enemy)

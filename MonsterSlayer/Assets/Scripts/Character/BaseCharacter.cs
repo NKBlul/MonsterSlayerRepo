@@ -14,17 +14,6 @@ public class BaseCharacter : MonoBehaviour
     protected float attack;
     protected float defense;
 
-    protected virtual void Awake()
-    {
-        element = characterStats.element;
-        names = characterStats.name;
-        level = characterStats.level;
-        health = characterStats.health;
-        maxHealth = characterStats.maxHealth;
-        attack = characterStats.attack;
-        defense = characterStats.defense;
-    }
-
     public float calculateDamage(BaseCharacter attacker, BaseCharacter defender, Elements element1, Elements element2)
     {
         float levelScalingMultiplier = 1 + (attacker.level - defender.level) * 0.1f;

@@ -9,27 +9,25 @@ public class Player : BaseCharacter
     public float currentXP;
     public float xpNeededToLevelUp;
 
-    protected override void Awake()
-    {
-        base.Awake();
-
-        //if (characterStats is PlayerStatsSO playerstats)
-        //{
-        //    playerStats = playerstats;
-        //    currentXP = playerStats.currentXP;
-        //    xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
-        //}
-    }
-
     private void Start()
     {
-        // Set player stats in Start since the SO is assigned after instantiation
-        if (playerStats != null)
-        {
-            characterStats = playerStats;
-            currentXP = playerStats.currentXP;
-            xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
-        }
+
+    }
+
+    public void InitializePlayer(PlayerStatsSO stats)
+    {
+        playerStats = stats;
+        characterStats = playerStats;
+
+        element = playerStats.element;
+        names = playerStats.name;
+        level = playerStats.level;
+        health = playerStats.health;
+        maxHealth = playerStats.maxHealth;
+        attack = playerStats.attack;
+        defense = playerStats.defense;
+        currentXP = playerStats.currentXP;
+        xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
     }
 
     public void GainXP(float xp)

@@ -10,25 +10,24 @@ public class Enemy : BaseCharacter
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
 
-    protected override void Awake()
-    {
-        base.Awake();
-
-        //if (characterStats is EnemyStatsSO enemystats)
-        //{
-        //    enemyStats = enemystats;
-        //    xpDrops = enemyStats.xpDrop;
-        //}
-    }
-
     private void Start()
     {
-        if (enemyStats != null)
-        {
-            characterStats = enemyStats;
-            xpDrops = enemyStats.xpDrop;
-            health = characterStats.maxHealth; // Initialize health from SO
-        }
+
+    }
+
+    public void InitializeEnemy(EnemyStatsSO stats)
+    {
+        enemyStats = stats;
+        characterStats = enemyStats;
+
+        element = enemyStats.element;
+        names = enemyStats.name;
+        level = enemyStats.level;
+        health = enemyStats.health;
+        maxHealth = enemyStats.maxHealth;
+        attack = enemyStats.attack;
+        defense = enemyStats.defense;
+        xpDrops = enemyStats.xpDrop;
     }
 
     public override void OnDie()

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<EnemyStatsSO> basicEnemy;
     [SerializeField] List<EnemyStatsSO> bossEnemy;
 
+    [SerializeField] PlayerStatsSO playerStats;
+
     public Player player;
     public Enemy enemy;
 
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject playerObject = Instantiate(playerPrefab);
         player = playerObject.GetComponent<Player>();
+
+        player.InitializePlayer(playerStats);
     }
 
     void SpawnEnemy()
@@ -45,7 +49,7 @@ public class GameManager : MonoBehaviour
         GameObject enemyObject = Instantiate(enemyPrefab);
         enemy = enemyObject.GetComponent<Enemy>();
 
-        enemy.enemyStats = GetRandomEnemy();
+        enemy.InitializeEnemy(GetRandomEnemy());  // Initialize with the random enemy stats
 
         player.SubscribeToEnemy(enemy);
         enemy.OnEnemyDeath += HandleEnemyDeath;

@@ -269,6 +269,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 66d61d034d1b34643aa9fa6694525157, type: 2}
   bossEnemy:
   - {fileID: 11400000, guid: a7e2ae26a1a4aa742a04a7cc968a5e67, type: 2}
+  playerStats: {fileID: 11400000, guid: 1757771f15f400d4a96c774e2bf4bd02, type: 2}
   player: {fileID: 0}
   enemy: {fileID: 0}
 --- !u!4 &2036969842

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseCharacter : MonoBehaviour
 {
-    public CharacterStatsSO characterStats;
+    protected CharacterStatsSO characterStats;
 
     public Elements element;
     protected string names;
@@ -14,7 +14,7 @@ public class BaseCharacter : MonoBehaviour
     protected float attack;
     protected float defense;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         element = characterStats.element;
         names = characterStats.name;

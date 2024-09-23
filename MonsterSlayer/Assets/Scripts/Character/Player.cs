@@ -4,8 +4,33 @@ using UnityEngine;
 
 public class Player : BaseCharacter
 {
+    public PlayerStatsSO playerStats;
+
     public float currentXP;
     public float xpNeededToLevelUp;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        //if (characterStats is PlayerStatsSO playerstats)
+        //{
+        //    playerStats = playerstats;
+        //    currentXP = playerStats.currentXP;
+        //    xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
+        //}
+    }
+
+    private void Start()
+    {
+        // Set player stats in Start since the SO is assigned after instantiation
+        if (playerStats != null)
+        {
+            characterStats = playerStats;
+            currentXP = playerStats.currentXP;
+            xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
+        }
+    }
 
     public void GainXP(float xp)
     {

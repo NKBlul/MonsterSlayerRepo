@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public delegate void EnemyKilled();
-    public static event EnemyKilled OnEnemyKilled;
+    [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject enemyPrefab;
+
+    [SerializeField] List<EnemyStatsSO> basicEnemy;
+    [SerializeField] List<EnemyStatsSO> bossEnemy;
 
     public Player player;
     public Enemy enemy;
@@ -27,6 +30,39 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player.SubscribeToEnemy(enemy); // Subscribe the player to the enemy's death event
+        SpawnPlayer();
+        SpawnEnemy();
+    }
+
+    void SpawnPlayer()
+    {
+        GameObject playerObject = Instantiate(playerPrefab);
+        player = playerObject.GetComponent<Player>();
+    }
+
+    void SpawnEnemy()
+    {
+        GameObject enemyObject = Instantiate(enemyPrefab);
+        enemy = enemyObject.GetComponent<Enemy>();
+
+        enemy.enemyStats = GetRandomEnemy();
+
+        player.SubscribeToEnemy(enemy);
+        enemy.OnEnemyDeath += HandleEnemyDeath;
+    }
+
+    private void HandleEnemyDeath(float xp)
+    {
+        // When the enemy dies, give the player XP
+        player.GainXP(xp);
+
+        SpawnEnemy();
+    }
+
+    EnemyStatsSO GetRandomEnemy()
+    {
+        int randomEnemyIndex = Random.Range(0, basicEnemy.Count);
+
+        return basicEnemy[randomEnemyIndex];
     }
 }

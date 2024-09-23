@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Stat", menuName = "Scritables/Stats", order = 1)]
 public class CharacterStatsSO : ScriptableObject
 {
     public Elements element;
@@ -11,3 +10,4 @@ public class CharacterStatsSO : ScriptableObject
     public float attack;
     public float defense;
 }
+

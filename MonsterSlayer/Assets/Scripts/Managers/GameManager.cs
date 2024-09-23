@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Enemy enemy;
 
+    public int enemyKilled;
+
     private void Awake()
     {
         if (instance == null)
@@ -55,12 +57,29 @@ public class GameManager : MonoBehaviour
         enemy.OnEnemyDeath += HandleEnemyDeath;
     }
 
+    void SpawnBoss()
+    {
+        GameObject enemyObject = Instantiate(enemyPrefab);
+        enemy = enemyObject.GetComponent<Enemy>();
+
+        enemy.InitializeEnemy(GetRandomBoss());  // Initialize with the random enemy stats
+
+        player.SubscribeToEnemy(enemy);
+        enemy.OnEnemyDeath += HandleEnemyDeath;
+    }
+
     private void HandleEnemyDeath(float xp)
     {
         // When the enemy dies, give the player XP
         player.GainXP(xp);
-
-        SpawnEnemy();
+        if (enemyKilled % 5 != 0)
+        {
+            SpawnEnemy();
+        }
+        else
+        {
+            SpawnBoss();
+        }
     }
 
     EnemyStatsSO GetRandomEnemy()
@@ -68,5 +87,12 @@ public class GameManager : MonoBehaviour
         int randomEnemyIndex = Random.Range(0, basicEnemy.Count);
 
         return basicEnemy[randomEnemyIndex];
+    }
+
+    EnemyStatsSO GetRandomBoss()
+    {
+        int randBossIndex = Random.Range(0, bossEnemy.Count);
+
+        return bossEnemy[randBossIndex];
     }
 }

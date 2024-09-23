@@ -33,7 +33,7 @@ public class Enemy : BaseCharacter
     public override void OnDie()
     {
         base.OnDie();
-
+        GameManager.instance.enemyKilled++;
         OnEnemyDeath?.Invoke(xpDrops); // Notify subscribers about the death and XP drop    }
         Destroy(gameObject);
     }

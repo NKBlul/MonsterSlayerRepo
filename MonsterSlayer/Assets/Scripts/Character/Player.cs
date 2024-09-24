@@ -21,14 +21,14 @@ public class Player : BaseCharacter
         characterStats = playerStats;
 
         element = playerStats.element;
-        names = playerStats.name;
+        names = playerStats.names;
         level = playerStats.level;
         health = playerStats.health;
         maxHealth = playerStats.maxHealth;
         attack = playerStats.attack;
         defense = playerStats.defense;
         currentXP = playerStats.currentXP;
-        xpNeededToLevelUp = playerStats.xpRequiredForNextLevel;
+        xpNeededToLevelUp = playerStats.xpNeededToLevelUp;
     }
 
     public void EquipWeapon(WeaponSO weapon)

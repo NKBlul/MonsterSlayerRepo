@@ -15,6 +15,6 @@ MonoBehaviour:
   weaponSprite: {fileID: 0}
   weaponName: 
   weaponType: 0
-  weaponElements: 0
-  weaponDamage: 0
+  weaponElements: 6
+  weaponDamage: 3
   weaponDesc: 

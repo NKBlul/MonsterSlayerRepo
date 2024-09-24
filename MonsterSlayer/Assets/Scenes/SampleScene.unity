@@ -270,8 +270,10 @@ MonoBehaviour:
   bossEnemy:
   - {fileID: 11400000, guid: a7e2ae26a1a4aa742a04a7cc968a5e67, type: 2}
   playerStats: {fileID: 11400000, guid: 1757771f15f400d4a96c774e2bf4bd02, type: 2}
+  enemyStats: {fileID: 11400000, guid: b0149080f05f086489d6f99146a4b068, type: 2}
   player: {fileID: 0}
   enemy: {fileID: 0}
+  enemyKilled: 0
 --- !u!4 &2036969842
 Transform:
   m_ObjectHideFlags: 0

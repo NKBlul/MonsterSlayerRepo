@@ -7,12 +7,12 @@ public class BaseCharacter : MonoBehaviour
     protected CharacterStatsSO characterStats;
 
     public Elements element;
-    protected string names;
-    protected int level;
-    protected float health;
-    protected float maxHealth;
-    protected float attack;
-    protected float defense;
+    public string names;
+    public int level;
+    public float health;
+    public float maxHealth;
+    public float attack;
+    public float defense;
 
     public float calculateDamage(BaseCharacter attacker, BaseCharacter defender, Elements element1, Elements element2)
     {

@@ -21,7 +21,7 @@ public class Enemy : BaseCharacter
         characterStats = enemyStats;
 
         element = enemyStats.element;
-        names = enemyStats.name;
+        names = enemyStats.names;
         level = enemyStats.level;
         health = enemyStats.health;
         maxHealth = enemyStats.maxHealth;

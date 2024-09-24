@@ -19,5 +19,5 @@ MonoBehaviour:
   maxHealth: 10
   attack: 5
   defense: 3
-  xpRequiredForNextLevel: 50
+  xpNeededToLevelUp: 150
   currentXP: 0

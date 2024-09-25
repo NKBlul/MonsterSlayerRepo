@@ -15,10 +15,10 @@ MonoBehaviour:
   element: 3
   names: Earth Slime
   level: 1
-  health: 5
-  maxHealth: 5
-  attack: 3
-  defense: 2
+  health: 60
+  maxHealth: 60
+  attack: 10
+  defense: 3
   enemySprite: {fileID: 1897663597, guid: 74314b723d4e578438ce941a43513c5c, type: 3}
-  xpDrop: 5
+  xpDrop: 20
   difficultyMultiplier: 0

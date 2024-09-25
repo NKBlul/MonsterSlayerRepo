@@ -15,10 +15,10 @@ MonoBehaviour:
   element: 2
   names: Water Slime
   level: 1
-  health: 5
-  maxHealth: 5
-  attack: 3
-  defense: 2
+  health: 60
+  maxHealth: 60
+  attack: 10
+  defense: 3
   enemySprite: {fileID: -1587331210, guid: 29d20334e2e833b4eb9e03cf31e6f5e7, type: 3}
-  xpDrop: 5
+  xpDrop: 20
   difficultyMultiplier: 0

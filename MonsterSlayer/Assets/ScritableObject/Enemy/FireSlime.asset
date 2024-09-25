@@ -15,10 +15,10 @@ MonoBehaviour:
   element: 1
   names: Fire Slime
   level: 1
-  health: 5
-  maxHealth: 5
-  attack: 3
-  defense: 2
+  health: 60
+  maxHealth: 60
+  attack: 10
+  defense: 3
   enemySprite: {fileID: 1909711296, guid: 88ea083ca088e8e498fc46f09eb62e29, type: 3}
-  xpDrop: 5
+  xpDrop: 20
   difficultyMultiplier: 0

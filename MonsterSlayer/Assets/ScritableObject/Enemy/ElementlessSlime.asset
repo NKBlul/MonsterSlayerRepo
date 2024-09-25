@@ -15,10 +15,10 @@ MonoBehaviour:
   element: 0
   names: Elementless Slime
   level: 1
-  health: 5
-  maxHealth: 5
-  attack: 3
-  defense: 2
+  health: 60
+  maxHealth: 60
+  attack: 10
+  defense: 3
   enemySprite: {fileID: -1287747775, guid: 586f83ec789bf4e4f83e01a330d248f3, type: 3}
-  xpDrop: 5
+  xpDrop: 20
   difficultyMultiplier: 0

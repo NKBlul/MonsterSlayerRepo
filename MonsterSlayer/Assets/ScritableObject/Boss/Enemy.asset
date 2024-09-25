@@ -15,9 +15,10 @@ MonoBehaviour:
   element: 0
   names: 4
   level: 5
-  health: 100
-  maxHealth: 100
+  health: 120
+  maxHealth: 120
   attack: 10
   defense: 5
-  xpDrop: 50
+  enemySprite: {fileID: 0}
+  xpDrop: 150
   difficultyMultiplier: 0

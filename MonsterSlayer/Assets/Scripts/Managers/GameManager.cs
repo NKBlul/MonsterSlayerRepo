@@ -49,20 +49,25 @@ public class GameManager : MonoBehaviour
     {
         GameObject enemyObject = Instantiate(enemyPrefab);
         enemy = enemyObject.GetComponent<Enemy>();
+        EnemyStatsSO enemyStatUsed = null;
+        bool isBoss = false;
 
         if (enemyKilled % 5 != 0 || enemyKilled == 0)
         {
-            EnemyStatsSO randomEnemy = GetRandomEnemy();
-            Debug.Log(randomEnemy);
-            enemy.InitializeEnemy(randomEnemy);
+            enemyStatUsed = GetRandomEnemy();
+            isBoss = false;
         }
         else if (enemyKilled % 5 == 0)
         {
-            EnemyStatsSO bossEnemy = GetRandomBoss();
-            Debug.Log(bossEnemy);
-            enemy.InitializeEnemy(bossEnemy);
+            enemyStatUsed = GetRandomBoss();
+            isBoss = true;
         }
 
+        enemy.InitializeEnemy(enemyStatUsed);
+        if (enemyKilled % 6 == 0 && enemyKilled != 0)
+        {
+            AdjustEnemyStats(enemy, enemyKilled, isBoss);
+        }
         player.SubscribeToEnemy(enemy);
         enemy.OnEnemyDeath += HandleEnemyDeath;
     }
@@ -150,5 +155,20 @@ public class GameManager : MonoBehaviour
         enemy.xpDrops = enemyData.xpDrops;
 
         Debug.Log("Enemy data loaded");
+    }
+
+    public void AdjustEnemyStats(Enemy enemy, int enemiesKilled, bool isBoss)
+    {
+        float difficultyMultiplier = 1 + (enemiesKilled / 5) * 0.1f;
+        float bossMultiplier = isBoss ? 1.25f : 1.0f;
+
+        enemy.health = enemy.health * difficultyMultiplier * bossMultiplier;
+        enemy.maxHealth = enemy.maxHealth * difficultyMultiplier * bossMultiplier;
+        enemy.attack = enemy.attack * difficultyMultiplier * bossMultiplier;
+        enemy.defense = enemy.defense * difficultyMultiplier * bossMultiplier;
+        enemy.xpDrops = enemy.xpDrops * difficultyMultiplier * bossMultiplier;
+
+        Debug.Log($"Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}," +
+            $"XPDrop: {enemy.xpDrops}");
     }
 }

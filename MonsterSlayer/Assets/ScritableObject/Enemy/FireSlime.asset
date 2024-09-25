@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7478c593c713c4ca8643c8cd6b6a5c, type: 3}
-  m_Name: Enemy 1
+  m_Name: FireSlime
   m_EditorClassIdentifier: 
-  element: 0
-  names: 2
+  element: 1
+  names: Fire Slime
   level: 1
   health: 5
   maxHealth: 5
   attack: 3
   defense: 2
+  enemySprite: {fileID: 1909711296, guid: 88ea083ca088e8e498fc46f09eb62e29, type: 3}
   xpDrop: 5
   difficultyMultiplier: 0

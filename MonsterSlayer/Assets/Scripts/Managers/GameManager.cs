@@ -119,14 +119,14 @@ public class GameManager : MonoBehaviour
 
     void ApplyLoadedPlayerData(PlayerData playerData)
     {
-        player./*playerStats.*/element = playerData.element;
-        player./*playerStats.*/level = playerData.level;
-        player./*playerStats.*/health = playerData.health;
-        player./*playerStats.*/maxHealth = playerData.maxHealth;
-        player./*playerStats.*/attack = playerData.attack;
-        player./*playerStats.*/defense = playerData.defense;
-        player./*playerStats.*/currentXP = playerData.currentXP;
-        player./*playerStats.*/xpNeededToLevelUp = playerData.xpNeededToLevelUp;
+        player.element = playerData.element;
+        player.level = playerData.level;
+        player.health = playerData.health;
+        player.maxHealth = playerData.maxHealth;
+        player.attack = playerData.attack;
+        player.defense = playerData.defense;
+        player.currentXP = playerData.currentXP;
+        player.xpNeededToLevelUp = playerData.xpNeededToLevelUp;
 
         if (playerData.equippedWeapon != null)
         {
@@ -139,14 +139,15 @@ public class GameManager : MonoBehaviour
     void ApplyLoadedEnemyData(EnemyData enemyData)
     {
         enemy.enemyStats = enemyData.stats;
+        enemy.spriteRenderer.sprite = enemyData.enemySprite;
         enemy.names = enemyData.enemyName;
-        enemy./*enemyStats.*/element = enemyData.element;
-        enemy./*enemyStats.*/level = enemyData.level;
-        enemy./*enemyStats.*/health = enemyData.health;
-        enemy./*enemyStats.*/maxHealth = enemyData.maxHealth;
-        enemy./*enemyStats.*/attack = enemyData.attack;
-        enemy./*enemyStats.*/defense = enemyData.defense;
-        enemy./*enemyStats.*/xpDrops = enemyData.xpDrops;
+        enemy.element = enemyData.element;
+        enemy.level = enemyData.level;
+        enemy.health = enemyData.health;
+        enemy.maxHealth = enemyData.maxHealth;
+        enemy.attack = enemyData.attack;
+        enemy.defense = enemyData.defense;
+        enemy.xpDrops = enemyData.xpDrops;
 
         Debug.Log("Enemy data loaded");
     }

@@ -7,6 +7,9 @@ public class Enemy : BaseCharacter
 {
     public EnemyStatsSO enemyStats;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite hurtSprite;
+    public bool canBeHurt;
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
 
@@ -20,6 +23,7 @@ public class Enemy : BaseCharacter
         enemyStats = stats;
         characterStats = enemyStats;
 
+        spriteRenderer.sprite = enemyStats.enemySprite;
         element = enemyStats.element;
         names = enemyStats.names;
         level = enemyStats.level;
@@ -28,6 +32,13 @@ public class Enemy : BaseCharacter
         attack = enemyStats.attack;
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
+        canBeHurt = true;
+    }
+
+    public override void OnTakeDamage(float damage)
+    {
+        base.OnTakeDamage(damage);
+        StartCoroutine(ReturnToOriginalSprite());
     }
 
     public override void OnDie()
@@ -36,5 +47,16 @@ public class Enemy : BaseCharacter
         GameManager.instance.enemyKilled++;
         OnEnemyDeath?.Invoke(xpDrops); // Notify subscribers about the death and XP drop    }
         Destroy(gameObject);
+    }
+
+    IEnumerator ReturnToOriginalSprite()
+    {
+        canBeHurt = false;
+        //spriteRenderer.sprite = hurtSprite;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.15f);
+        canBeHurt = true;
+        //spriteRenderer.sprite = enemyStats.enemySprite;
+        spriteRenderer.color = Color.white;
     }
 }

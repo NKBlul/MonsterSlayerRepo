@@ -31,6 +31,7 @@ public static class SaveSystem
         }
         else
         {
+            Debug.Log(saveFilePath);
             Debug.LogWarning("No save file found!");
             return null;
         }
@@ -77,6 +78,7 @@ public class PlayerData
 public class EnemyData
 {
     public EnemyStatsSO stats;
+    public Sprite enemySprite;
     public string enemyName;
     public Elements element;
     public int level;
@@ -84,6 +86,7 @@ public class EnemyData
 
     public EnemyData(Enemy enemy)
     {
+        enemySprite = enemy.spriteRenderer.sprite;
         stats = enemy.enemyStats;
         enemyName = enemy.names;
         element = enemy.element;

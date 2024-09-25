@@ -29,7 +29,7 @@ public class Clickable : MonoBehaviour
         {
             Vector2 mousePos = MouseToWorldPos();
 
-            if (IsInTouchArea(mousePos))
+            if (IsInTouchArea(mousePos) && enemy.canBeHurt)
             {
                 player.DealDamage(enemy);
                // Debug.Log(mousePos);
@@ -39,7 +39,7 @@ public class Clickable : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Vector2 touchPos = TouchToWorldPos();
-            if (IsInTouchArea(touchPos))
+            if (IsInTouchArea(touchPos) && enemy.canBeHurt)
             {
                 Debug.Log(touchPos);
             }

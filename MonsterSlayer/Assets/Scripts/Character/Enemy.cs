@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : BaseCharacter
 {
@@ -45,6 +46,11 @@ public class Enemy : BaseCharacter
     {
         base.OnDie();
         GameManager.instance.enemyKilled++;
+        if (GameManager.instance.isBoss)
+        {
+            Debug.Log("HELO");
+            GameManager.instance.bossKilled++;
+        }
         OnEnemyDeath?.Invoke(xpDrops); // Notify subscribers about the death and XP drop    }
         Destroy(gameObject);
     }

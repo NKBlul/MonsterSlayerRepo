@@ -267,6 +267,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92f55492e28368b45bee28c364590550, type: 2}
   - {fileID: 11400000, guid: 10f2a57fa2e47f2408aecebbd4fa752c, type: 2}
   - {fileID: 11400000, guid: 66d61d034d1b34643aa9fa6694525157, type: 2}
+  - {fileID: 11400000, guid: c475b89fe113332459143061374b77ba, type: 2}
   bossEnemy:
   - {fileID: 11400000, guid: a7e2ae26a1a4aa742a04a7cc968a5e67, type: 2}
   playerStats: {fileID: 11400000, guid: 1757771f15f400d4a96c774e2bf4bd02, type: 2}
@@ -274,6 +275,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 0}
   enemyKilled: 0
+  isBoss: 0
 --- !u!4 &2036969842
 Transform:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public Enemy enemy;
 
     public int enemyKilled;
+    public bool isBoss;
+    public int bossKilled;
 
     private void Awake()
     {
@@ -50,7 +52,6 @@ public class GameManager : MonoBehaviour
         GameObject enemyObject = Instantiate(enemyPrefab);
         enemy = enemyObject.GetComponent<Enemy>();
         EnemyStatsSO enemyStatUsed = null;
-        bool isBoss = false;
 
         if (enemyKilled % 5 != 0 || enemyKilled == 0)
         {
@@ -64,10 +65,7 @@ public class GameManager : MonoBehaviour
         }
 
         enemy.InitializeEnemy(enemyStatUsed);
-        if (enemyKilled % 6 == 0 && enemyKilled != 0)
-        {
-            AdjustEnemyStats(enemy, enemyKilled, isBoss);
-        }
+        AdjustEnemyStats(enemy, bossKilled, isBoss);
         player.SubscribeToEnemy(enemy);
         enemy.OnEnemyDeath += HandleEnemyDeath;
     }
@@ -157,18 +155,37 @@ public class GameManager : MonoBehaviour
         Debug.Log("Enemy data loaded");
     }
 
-    public void AdjustEnemyStats(Enemy enemy, int enemiesKilled, bool isBoss)
+
+    //public void AdjustEnemyStats(Enemy enemy, int enemiesKilled, bool isBoss)
+    //{
+    //    float difficultyMultiplier = 1 + (enemiesKilled / 5) * 0.1f;
+    //    float bossMultiplier = isBoss ? 1.1f : 1.0f;
+    //
+    //    enemy.health = enemy.health * difficultyMultiplier * bossMultiplier;
+    //    enemy.maxHealth = enemy.maxHealth * difficultyMultiplier * bossMultiplier;
+    //    enemy.attack = enemy.attack * difficultyMultiplier * bossMultiplier;
+    //    enemy.defense = enemy.defense * difficultyMultiplier * bossMultiplier;
+    //    enemy.xpDrops = enemy.xpDrops * difficultyMultiplier * bossMultiplier;
+    //
+    //    Debug.Log($"Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}," +
+    //        $"XPDrop: {enemy.xpDrops}");
+    //}
+
+    public void AdjustEnemyStats(Enemy enemy, int bossKills, bool isBoss)
     {
-        float difficultyMultiplier = 1 + (enemiesKilled / 5) * 0.1f;
-        float bossMultiplier = isBoss ? 1.25f : 1.0f;
+        // Apply scaling based on the number of bosses killed
+        float scalingFactor = 1 + bossKills * 0.2f;
+        float bossMultiplier = isBoss ? 1.1f : 1.0f;
 
-        enemy.health = enemy.health * difficultyMultiplier * bossMultiplier;
-        enemy.maxHealth = enemy.maxHealth * difficultyMultiplier * bossMultiplier;
-        enemy.attack = enemy.attack * difficultyMultiplier * bossMultiplier;
-        enemy.defense = enemy.defense * difficultyMultiplier * bossMultiplier;
-        enemy.xpDrops = enemy.xpDrops * difficultyMultiplier * bossMultiplier;
-
-        Debug.Log($"Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}," +
-            $"XPDrop: {enemy.xpDrops}");
+        if (enemyKilled > 5)
+        {
+            enemy.health = enemy.health * scalingFactor * bossMultiplier;
+            enemy.maxHealth = enemy.maxHealth * scalingFactor * bossMultiplier;
+            enemy.attack = enemy.attack * scalingFactor * bossMultiplier;
+            enemy.defense = enemy.defense * scalingFactor * bossMultiplier;
+            enemy.xpDrops = enemy.xpDrops * scalingFactor * bossMultiplier;
+        }
+        
+        Debug.Log($"Enemy stats after scaling: Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}, XPDrop: {enemy.xpDrops}");
     }
 }

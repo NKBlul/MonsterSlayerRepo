@@ -66,7 +66,11 @@ public class Player : BaseCharacter
             level++;
             float remainingXP = newXP - xpNeededToLevelUp;
             xpNeededToLevelUp += 50;
+
+            OnLevelUp();
+
             Debug.Log($"Level: {level}, Remainingxp: {remainingXP}, next XP needed: {xpNeededToLevelUp}");
+
             if (remainingXP > 0)
             {
                 currentXP = 0;
@@ -74,6 +78,16 @@ public class Player : BaseCharacter
             }
         }
         Debug.Log("CurrentXP: " + currentXP);
+    }
+
+    private void OnLevelUp()
+    {
+        health = maxHealth = maxHealth * 1.15f; // Increase max health by 15%
+        attack = attack * 1.08f; // Increase attack by 8%
+        defense = defense * 1.08f; // Increase defense by 8%
+
+        // Optionally restore health upon level up
+        health = maxHealth;
     }
 
     public void SubscribeToEnemy(Enemy enemy)

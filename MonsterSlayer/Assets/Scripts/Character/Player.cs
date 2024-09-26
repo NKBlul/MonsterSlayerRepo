@@ -82,9 +82,9 @@ public class Player : BaseCharacter
 
     private void OnLevelUp()
     {
-        health = maxHealth = maxHealth * 1.15f; // Increase max health by 15%
-        attack = attack * 1.08f; // Increase attack by 8%
-        defense = defense * 1.08f; // Increase defense by 8%
+        health = maxHealth = Mathf.CeilToInt(maxHealth * 1.09f); // Increase max health by 9%
+        attack = Mathf.CeilToInt(attack * 1.05f); // Increase attack by 5%
+        defense = Mathf.CeilToInt(defense * 1.05f); // Increase defense by 5%
 
         // Optionally restore health upon level up
         health = maxHealth;

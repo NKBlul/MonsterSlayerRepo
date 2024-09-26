@@ -121,4 +121,5 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   spriteRenderer: {fileID: 1220911520745877711}
   hurtSprite: {fileID: -1287747775, guid: 586f83ec789bf4e4f83e01a330d248f3, type: 3}
+  canBeHurt: 0
   xpDrops: 5

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   element: 0
-  names: 4
+  names: Green Dragon
   level: 5
   health: 120
   maxHealth: 120
   attack: 10
   defense: 5
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: 131206131, guid: 299fa361cfec255418a07d15b5bc88ec, type: 3}
   xpDrop: 150
   difficultyMultiplier: 0

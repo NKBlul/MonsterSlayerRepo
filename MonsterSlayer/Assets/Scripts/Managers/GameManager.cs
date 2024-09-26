@@ -174,16 +174,16 @@ public class GameManager : MonoBehaviour
     public void AdjustEnemyStats(Enemy enemy, int bossKills, bool isBoss)
     {
         // Apply scaling based on the number of bosses killed
-        float scalingFactor = 1 + bossKills * 0.2f;
-        float bossMultiplier = isBoss ? 1.1f : 1.0f;
+        float scalingFactor = 1 + (bossKills * 0.25f);
+        float bossMultiplier = isBoss ? 1.25f : 1.0f;
 
         if (enemyKilled > 5)
         {
-            enemy.health = enemy.health * scalingFactor * bossMultiplier;
-            enemy.maxHealth = enemy.maxHealth * scalingFactor * bossMultiplier;
-            enemy.attack = enemy.attack * scalingFactor * bossMultiplier;
-            enemy.defense = enemy.defense * scalingFactor * bossMultiplier;
-            enemy.xpDrops = enemy.xpDrops * scalingFactor * bossMultiplier;
+            enemy.health = Mathf.CeilToInt(enemy.health * scalingFactor * bossMultiplier);
+            enemy.maxHealth = Mathf.CeilToInt(enemy.maxHealth * scalingFactor * bossMultiplier);
+            enemy.attack = Mathf.CeilToInt(enemy.attack * scalingFactor * bossMultiplier);
+            enemy.defense = Mathf.CeilToInt(enemy.defense * scalingFactor * bossMultiplier);
+            enemy.xpDrops = Mathf.CeilToInt(enemy.xpDrops * scalingFactor * bossMultiplier);
         }
         
         Debug.Log($"Enemy stats after scaling: Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}, XPDrop: {enemy.xpDrops}");

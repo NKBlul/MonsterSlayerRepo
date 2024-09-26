@@ -276,6 +276,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   enemyKilled: 0
   isBoss: 0
+  bossKilled: 0
 --- !u!4 &2036969842
 Transform:
   m_ObjectHideFlags: 0

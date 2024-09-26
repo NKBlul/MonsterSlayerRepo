@@ -264,12 +264,22 @@ MonoBehaviour:
   playerPrefab: {fileID: 8899974110190229033, guid: 6961f74353ed85f45b36e28d0d729e57, type: 3}
   enemyPrefab: {fileID: 330223552264547028, guid: bf5311cea053b9b408a5d53fd6164228, type: 3}
   basicEnemy:
+  - {fileID: 11400000, guid: 74e5f81cf0d8c8f4c8ded1d788e5fd75, type: 2}
+  - {fileID: 11400000, guid: f807a89799de2e247b1428214d75b8cf, type: 2}
   - {fileID: 11400000, guid: 92f55492e28368b45bee28c364590550, type: 2}
-  - {fileID: 11400000, guid: 10f2a57fa2e47f2408aecebbd4fa752c, type: 2}
-  - {fileID: 11400000, guid: 66d61d034d1b34643aa9fa6694525157, type: 2}
   - {fileID: 11400000, guid: c475b89fe113332459143061374b77ba, type: 2}
+  - {fileID: 11400000, guid: 10f2a57fa2e47f2408aecebbd4fa752c, type: 2}
+  - {fileID: 11400000, guid: 431ab7cbf05231b4f8d746b939b508b2, type: 2}
+  - {fileID: 11400000, guid: 8a56bd77dbe9f2b4aa4e28ef34d995f3, type: 2}
+  - {fileID: 11400000, guid: 4f2a899f466adb348965eba78c601b77, type: 2}
+  - {fileID: 11400000, guid: a5dc20ecdd9fdc74f98ba1407e7159a1, type: 2}
+  - {fileID: 11400000, guid: 66d61d034d1b34643aa9fa6694525157, type: 2}
   bossEnemy:
+  - {fileID: 11400000, guid: d1a2226786fa44646b40fc93c8fd820f, type: 2}
+  - {fileID: 11400000, guid: 4e4c9899f22b30f4eb6c553d98d459a2, type: 2}
   - {fileID: 11400000, guid: a7e2ae26a1a4aa742a04a7cc968a5e67, type: 2}
+  - {fileID: 11400000, guid: 4b1b21d64ad74a64c906302d7aad315c, type: 2}
+  - {fileID: 11400000, guid: 39a88b31feb611f4cb393927ba75c76f, type: 2}
   playerStats: {fileID: 11400000, guid: 1757771f15f400d4a96c774e2bf4bd02, type: 2}
   enemyStats: {fileID: 11400000, guid: b0149080f05f086489d6f99146a4b068, type: 2}
   player: {fileID: 0}

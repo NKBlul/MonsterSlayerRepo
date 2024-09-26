@@ -14,7 +14,7 @@ public class Enemy : BaseCharacter
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
 
-    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] public TextMeshProUGUI nameText;
     [SerializeField] Image healthBar;
 
     private void Start()
@@ -38,8 +38,6 @@ public class Enemy : BaseCharacter
         xpDrops = enemyStats.xpDrop;
 
         canBeHurt = true;
-        nameText.text = names;
-        UpdateHealthBar();
     }
 
     public override void OnTakeDamage(float damage)
@@ -73,7 +71,7 @@ public class Enemy : BaseCharacter
         spriteRenderer.color = Color.white;
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         healthBar.fillAmount = health / maxHealth;
     }

@@ -14,7 +14,7 @@ public class Enemy : BaseCharacter
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
 
-    [SerializeField] public TextMeshProUGUI nameText;
+    [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] Image healthBar;
 
     private void Start()
@@ -37,6 +37,8 @@ public class Enemy : BaseCharacter
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
 
+        SetName();
+        UpdateHealthBar();
         canBeHurt = true;
     }
 
@@ -69,6 +71,11 @@ public class Enemy : BaseCharacter
         canBeHurt = true;
         //spriteRenderer.sprite = enemyStats.enemySprite;
         spriteRenderer.color = Color.white;
+    }
+
+    public void SetName()
+    {
+        nameText.text = names;
     }
 
     public void UpdateHealthBar()

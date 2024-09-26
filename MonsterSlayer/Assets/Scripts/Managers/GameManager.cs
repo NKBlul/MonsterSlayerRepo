@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             ApplyLoadedPlayerData(saveData.playerData);
             ApplyLoadedEnemyData(saveData.enemyData);
 
-            enemy.nameText.text = enemy.names;
+            enemy.SetName();
             enemy.UpdateHealthBar();
 
             // Load other game progress

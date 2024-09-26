@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
+using UnityEngine.UI;
 
 public class Enemy : BaseCharacter
 {
@@ -13,6 +13,9 @@ public class Enemy : BaseCharacter
     public bool canBeHurt;
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
+
+    [SerializeField] TextMeshProUGUI nameText;
+    [SerializeField] Image healthBar;
 
     private void Start()
     {
@@ -33,12 +36,16 @@ public class Enemy : BaseCharacter
         attack = enemyStats.attack;
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
+
         canBeHurt = true;
+        nameText.text = names;
+        UpdateHealthBar();
     }
 
     public override void OnTakeDamage(float damage)
     {
         base.OnTakeDamage(damage);
+        UpdateHealthBar();
         StartCoroutine(ReturnToOriginalSprite());
     }
 
@@ -64,5 +71,10 @@ public class Enemy : BaseCharacter
         canBeHurt = true;
         //spriteRenderer.sprite = enemyStats.enemySprite;
         spriteRenderer.color = Color.white;
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = health / maxHealth;
     }
 }

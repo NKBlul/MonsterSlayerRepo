@@ -1,14 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Clickable : MonoBehaviour
 {
     [SerializeField] Vector3 touchArea;
     Enemy enemy;
     Player player;
+
+
 
     void Start()
     {

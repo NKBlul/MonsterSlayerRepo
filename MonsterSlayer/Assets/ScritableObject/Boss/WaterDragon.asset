@@ -19,6 +19,6 @@ MonoBehaviour:
   maxHealth: 120
   attack: 10
   defense: 5
-  enemySprite: {fileID: 131206131, guid: 299fa361cfec255418a07d15b5bc88ec, type: 3}
+  enemySprite: {fileID: -688905249, guid: 960e294d14c78cf4f91fa6c29d977783, type: 3}
   xpDrop: 150
   difficultyMultiplier: 0

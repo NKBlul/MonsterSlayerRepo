@@ -124,6 +124,8 @@ MonoBehaviour:
   hurtSprite: {fileID: -1287747775, guid: 586f83ec789bf4e4f83e01a330d248f3, type: 3}
   canBeHurt: 0
   xpDrops: 5
+  nameText: {fileID: 3512554676873945556}
+  healthBar: {fileID: 6907894828481148724}
 --- !u!1 &688919378249042455
 GameObject:
   m_ObjectHideFlags: 0

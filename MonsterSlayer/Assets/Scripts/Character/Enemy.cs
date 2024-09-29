@@ -9,7 +9,10 @@ public class Enemy : BaseCharacter
     public EnemyStatsSO enemyStats;
 
     public SpriteRenderer spriteRenderer;
-    public Sprite hurtSprite;
+    public string names;
+    public float health;
+    public float maxHealth;
+    public float defense;
     public bool canBeHurt;
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
@@ -33,7 +36,6 @@ public class Enemy : BaseCharacter
         level = enemyStats.level;
         health = enemyStats.health;
         maxHealth = enemyStats.maxHealth;
-        attack = enemyStats.attack;
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
 
@@ -42,34 +44,12 @@ public class Enemy : BaseCharacter
         canBeHurt = true;
     }
 
-    public override void OnTakeDamage(float damage)
-    {
-        base.OnTakeDamage(damage);
-        UpdateHealthBar();
-        StartCoroutine(ReturnToOriginalSprite());
-    }
-
-    public override void OnDie()
-    {
-        base.OnDie();
-        GameManager.instance.enemyKilled++;
-        if (GameManager.instance.isBoss)
-        {
-            Debug.Log("HELO");
-            GameManager.instance.bossKilled++;
-        }
-        OnEnemyDeath?.Invoke(xpDrops); // Notify subscribers about the death and XP drop    }
-        Destroy(gameObject);
-    }
-
-    IEnumerator ReturnToOriginalSprite()
+    IEnumerator FlashHurtEffect()
     {
         canBeHurt = false;
-        //spriteRenderer.sprite = hurtSprite;
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.15f);
         canBeHurt = true;
-        //spriteRenderer.sprite = enemyStats.enemySprite;
         spriteRenderer.color = Color.white;
     }
 
@@ -81,5 +61,30 @@ public class Enemy : BaseCharacter
     public void UpdateHealthBar()
     {
         healthBar.fillAmount = health / maxHealth;
+    }
+
+    public void OnTakeDamage(float damage)
+    {
+        health -= damage;
+        Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
+        if (health <= 0)
+        {
+            OnDie();
+        }
+        UpdateHealthBar();
+        StartCoroutine(FlashHurtEffect());
+    }
+
+    public void OnDie()
+    {
+        Debug.Log("Dead");
+        GameManager.instance.enemyKilled++;
+        if (GameManager.instance.isBoss)
+        {
+            Debug.Log("HELO");
+            GameManager.instance.bossKilled++;
+        }
+        OnEnemyDeath?.Invoke(xpDrops); // Notify subscribers about the death and XP drop    }
+        Destroy(gameObject);
     }
 }

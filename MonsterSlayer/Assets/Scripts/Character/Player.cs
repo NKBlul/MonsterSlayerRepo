@@ -7,6 +7,7 @@ public class Player : BaseCharacter
     public PlayerStatsSO playerStats;
     public WeaponSO equippedWeapon;
 
+    public float attack;
     public float currentXP;
     public float xpNeededToLevelUp;
 
@@ -21,12 +22,8 @@ public class Player : BaseCharacter
         characterStats = playerStats;
 
         element = playerStats.element;
-        names = playerStats.names;
         level = playerStats.level;
-        health = playerStats.health;
-        maxHealth = playerStats.maxHealth;
         attack = playerStats.attack;
-        defense = playerStats.defense;
         currentXP = playerStats.currentXP;
         xpNeededToLevelUp = playerStats.xpNeededToLevelUp;
     }
@@ -82,12 +79,7 @@ public class Player : BaseCharacter
 
     private void OnLevelUp()
     {
-        health = maxHealth = Mathf.CeilToInt(maxHealth * 1.09f); // Increase max health by 9%
         attack = Mathf.CeilToInt(attack * 1.05f); // Increase attack by 5%
-        defense = Mathf.CeilToInt(defense * 1.05f); // Increase defense by 5%
-
-        // Optionally restore health upon level up
-        health = maxHealth;
     }
 
     public void SubscribeToEnemy(Enemy enemy)

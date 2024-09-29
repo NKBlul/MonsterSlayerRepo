@@ -60,10 +60,7 @@ public class PlayerData
         playerName = player.name;
         element = player.element;
         level = player.level;
-        health = player.health;
-        maxHealth = player.maxHealth;
         attack = player.attack;
-        defense = player.defense;
         currentXP = player.currentXP;
         xpNeededToLevelUp = player.xpNeededToLevelUp;
 
@@ -93,7 +90,6 @@ public class EnemyData
         level = enemy.level;
         health = enemy.health;
         maxHealth = enemy.maxHealth;
-        attack = enemy.attack;
         defense = enemy.defense;
         xpDrops = enemy.xpDrops;
     }

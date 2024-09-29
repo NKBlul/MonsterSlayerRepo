@@ -8,8 +8,6 @@ public class Clickable : MonoBehaviour
     Enemy enemy;
     Player player;
 
-
-
     void Start()
     {
         enemy = GameManager.instance.enemy;

@@ -127,10 +127,7 @@ public class GameManager : MonoBehaviour
     {
         player.element = playerData.element;
         player.level = playerData.level;
-        player.health = playerData.health;
-        player.maxHealth = playerData.maxHealth;
         player.attack = playerData.attack;
-        player.defense = playerData.defense;
         player.currentXP = playerData.currentXP;
         player.xpNeededToLevelUp = playerData.xpNeededToLevelUp;
 
@@ -151,7 +148,6 @@ public class GameManager : MonoBehaviour
         enemy.level = enemyData.level;
         enemy.health = enemyData.health;
         enemy.maxHealth = enemyData.maxHealth;
-        enemy.attack = enemyData.attack;
         enemy.defense = enemyData.defense;
         enemy.xpDrops = enemyData.xpDrops;
 
@@ -184,11 +180,10 @@ public class GameManager : MonoBehaviour
         {
             enemy.health = Mathf.CeilToInt(enemy.health * scalingFactor * bossMultiplier);
             enemy.maxHealth = Mathf.CeilToInt(enemy.maxHealth * scalingFactor * bossMultiplier);
-            enemy.attack = Mathf.CeilToInt(enemy.attack * scalingFactor * bossMultiplier);
             enemy.defense = Mathf.CeilToInt(enemy.defense * scalingFactor * bossMultiplier);
             enemy.xpDrops = Mathf.CeilToInt(enemy.xpDrops * scalingFactor * bossMultiplier);
         }
         
-        Debug.Log($"Enemy stats after scaling: Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}, XPDrop: {enemy.xpDrops}");
+        Debug.Log($"Enemy stats after scaling: Health: {enemy.health}, Max Health: {enemy.maxHealth}, Defense: {enemy.defense}, XPDrop: {enemy.xpDrops}");
     }
 }

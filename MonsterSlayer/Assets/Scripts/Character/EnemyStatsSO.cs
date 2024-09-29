@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyStatsSO : CharacterStatsSO
 {
     public Sprite enemySprite;
-    //public List<Sprite> sprites;
+    public string names;
+    public float health;
+    public float maxHealth;
+    public float defense;
     public float xpDrop;
     public float difficultyMultiplier;
 }

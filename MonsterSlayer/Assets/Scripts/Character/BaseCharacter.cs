@@ -7,14 +7,9 @@ public class BaseCharacter : MonoBehaviour
     protected CharacterStatsSO characterStats;
 
     public Elements element;
-    public string names;
     public int level;
-    public float health;
-    public float maxHealth;
-    public float attack;
-    public float defense;
 
-    public float calculateDamage(BaseCharacter attacker, BaseCharacter defender, Elements element1, Elements element2)
+    public float calculateDamage(Player attacker, Enemy defender, Elements element1, Elements element2)
     {
         float levelScalingMultiplier = 1 + (attacker.level - defender.level) * 0.1f;
         float damage = Mathf.Max((attacker.attack - defender.defense) *
@@ -22,20 +17,5 @@ public class BaseCharacter : MonoBehaviour
             1f);
 
         return damage;
-    }
-
-    public virtual void OnTakeDamage(float damage)
-    {
-        health -= damage;
-        Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
-        if (health <= 0)
-        {
-            OnDie();
-        }
-    }
-
-    public virtual void OnDie()
-    {
-        Debug.Log("Dead");
     }
 }

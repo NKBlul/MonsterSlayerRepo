@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Agis
   m_EditorClassIdentifier: 
   element: 6
+  level: 3
+  enemySprite: {fileID: 771267549, guid: 591691b6a149c124086fc99a8faf6090, type: 3}
   names: Agis
-  level: 5
   health: 120
   maxHealth: 120
-  attack: 10
   defense: 5
-  enemySprite: {fileID: 771267549, guid: 591691b6a149c124086fc99a8faf6090, type: 3}
   xpDrop: 150
   difficultyMultiplier: 0

@@ -178,6 +178,11 @@ public class GameManager : MonoBehaviour
 
         if (enemyKilled > 5)
         {
+            if (isBoss)
+            {
+                enemy.level += 3;
+            }
+            enemy.level += 2;
             enemy.health = Mathf.CeilToInt(enemy.health * scalingFactor * bossMultiplier);
             enemy.maxHealth = Mathf.CeilToInt(enemy.maxHealth * scalingFactor * bossMultiplier);
             enemy.defense = Mathf.CeilToInt(enemy.defense * scalingFactor * bossMultiplier);

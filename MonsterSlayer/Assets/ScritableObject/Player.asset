@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   element: 0
-  names: 
   level: 1
-  health: 100
-  maxHealth: 100
-  attack: 15
-  defense: 5
+  attack: 10
   xpNeededToLevelUp: 100
   currentXP: 0

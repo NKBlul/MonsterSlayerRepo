@@ -11,11 +11,6 @@ public class Player : BaseCharacter
     public float currentXP;
     public float xpNeededToLevelUp;
 
-    private void Start()
-    {
-
-    }
-
     public void InitializePlayer(PlayerStatsSO stats)
     {
         playerStats = stats;
@@ -51,6 +46,16 @@ public class Player : BaseCharacter
         // Calculate the damage using the weapon's attack power and element
         float damage = calculateDamage(this, enemy, elementUsed, enemy.element);
         enemy.OnTakeDamage(damage);
+    }
+
+    public float calculateDamage(Player attacker, Enemy defender, Elements element1, Elements element2)
+    {
+        float levelScalingMultiplier = 1 + (attacker.level - defender.level) * 0.1f;
+        float damage = Mathf.Max((attacker.attack - defender.defense) *
+            ElementInteraction.ElementDamageMultiplier(element1, element2) * levelScalingMultiplier,
+            1f);
+
+        return damage;
     }
 
     public void GainXP(float xp)

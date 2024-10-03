@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: WaterDragon
   m_EditorClassIdentifier: 
   element: 2
+  level: 3
+  enemySprite: {fileID: -688905249, guid: 960e294d14c78cf4f91fa6c29d977783, type: 3}
   names: Water Dragon
-  level: 5
   health: 120
   maxHealth: 120
-  attack: 10
   defense: 5
-  enemySprite: {fileID: -688905249, guid: 960e294d14c78cf4f91fa6c29d977783, type: 3}
   xpDrop: 150
   difficultyMultiplier: 0

@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: IceGolem
   m_EditorClassIdentifier: 
   element: 4
+  level: 3
+  enemySprite: {fileID: 374082521, guid: a6d373c84c213cd498242daf15886e89, type: 3}
   names: Ice Golem
-  level: 5
   health: 120
   maxHealth: 120
-  attack: 10
   defense: 5
-  enemySprite: {fileID: 374082521, guid: a6d373c84c213cd498242daf15886e89, type: 3}
   xpDrop: 150
   difficultyMultiplier: 0

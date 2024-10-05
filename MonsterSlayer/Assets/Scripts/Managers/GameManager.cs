@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
 
         enemy.InitializeEnemy(enemyStatUsed);
         AdjustEnemyStats(enemy, bossKilled, isBoss);
+        UIManager.instance.SetEnemyName(enemy.names);
+        UIManager.instance.UpdateHealthBar(enemy.health, enemy.maxHealth);
         player.SubscribeToEnemy(enemy);
         enemy.OnEnemyDeath += HandleEnemyDeath;
     }

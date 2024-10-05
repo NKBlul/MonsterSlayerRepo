@@ -36,8 +36,6 @@ public class Enemy : BaseCharacter
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
 
-        UIManager.instance.SetEnemyName(names);
-        UIManager.instance.UpdateHealthBar(health, maxHealth);
         canBeHurt = true;
     }
 

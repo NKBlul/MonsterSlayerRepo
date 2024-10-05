@@ -17,9 +17,6 @@ public class Enemy : BaseCharacter
     public float xpDrops;
     public event Action<float> OnEnemyDeath;
 
-    [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] Image healthBar;
-
     private void Start()
     {
 
@@ -39,8 +36,8 @@ public class Enemy : BaseCharacter
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
 
-        SetName();
-        UpdateHealthBar();
+        UIManager.instance.SetEnemyName(names);
+        UIManager.instance.UpdateHealthBar(health, maxHealth);
         canBeHurt = true;
     }
 
@@ -52,16 +49,7 @@ public class Enemy : BaseCharacter
         canBeHurt = true;
         spriteRenderer.color = Color.white;
     }
-
-    public void SetName()
-    {
-        nameText.text = names;
-    }
-
-    public void UpdateHealthBar()
-    {
-        healthBar.fillAmount = health / maxHealth;
-    }
+    
 
     public void OnTakeDamage(float damage)
     {
@@ -71,7 +59,7 @@ public class Enemy : BaseCharacter
         {
             OnDie();
         }
-        UpdateHealthBar();
+        UIManager.instance.UpdateHealthBar(health, maxHealth);
         StartCoroutine(FlashHurtEffect());
     }
 

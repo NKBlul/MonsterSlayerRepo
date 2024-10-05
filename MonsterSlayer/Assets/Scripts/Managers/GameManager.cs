@@ -110,8 +110,8 @@ public class GameManager : MonoBehaviour
             ApplyLoadedPlayerData(saveData.playerData);
             ApplyLoadedEnemyData(saveData.enemyData);
 
-            enemy.SetName();
-            enemy.UpdateHealthBar();
+            UIManager.instance.SetEnemyName(enemy.names);
+            UIManager.instance.UpdateHealthBar(enemy.health, enemy.maxHealth);
 
             // Load other game progress
             enemyKilled = saveData.enemyKilled;

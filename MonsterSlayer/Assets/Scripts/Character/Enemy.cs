@@ -53,11 +53,11 @@ public class Enemy : BaseCharacter
     {
         health -= damage;
         Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
+        UIManager.instance.UpdateHealthBar(health, maxHealth);
         if (health <= 0)
         {
             OnDie();
         }
-        UIManager.instance.UpdateHealthBar(health, maxHealth);
         StartCoroutine(FlashHurtEffect());
     }
 

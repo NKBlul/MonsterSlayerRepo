@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   element: 1
-  names: Demon
   level: 1
+  enemySprite: {fileID: 1155211438, guid: 49fb25ae0fe5e274398d55303cf8eb4a, type: 3}
+  names: Demon
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: 1155211438, guid: 49fb25ae0fe5e274398d55303cf8eb4a, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

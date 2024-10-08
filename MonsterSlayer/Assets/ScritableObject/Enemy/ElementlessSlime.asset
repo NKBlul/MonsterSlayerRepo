@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: ElementlessSlime
   m_EditorClassIdentifier: 
   element: 0
-  names: Elementless Slime
   level: 1
+  enemySprite: {fileID: -1287747775, guid: 586f83ec789bf4e4f83e01a330d248f3, type: 3}
+  names: Elementless Slime
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: -1287747775, guid: 586f83ec789bf4e4f83e01a330d248f3, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

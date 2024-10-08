@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
 
             // Load other game progress
             enemyKilled = saveData.enemyKilled;
+            UIManager.instance.UpdateCoinText(saveData.coins);
         }
         else
         {
@@ -152,25 +153,10 @@ public class GameManager : MonoBehaviour
         enemy.maxHealth = enemyData.maxHealth;
         enemy.defense = enemyData.defense;
         enemy.xpDrops = enemyData.xpDrops;
+        enemy.coinDrops = enemyData.coinDrop;
 
         Debug.Log("Enemy data loaded");
     }
-
-
-    //public void AdjustEnemyStats(Enemy enemy, int enemiesKilled, bool isBoss)
-    //{
-    //    float difficultyMultiplier = 1 + (enemiesKilled / 5) * 0.1f;
-    //    float bossMultiplier = isBoss ? 1.1f : 1.0f;
-    //
-    //    enemy.health = enemy.health * difficultyMultiplier * bossMultiplier;
-    //    enemy.maxHealth = enemy.maxHealth * difficultyMultiplier * bossMultiplier;
-    //    enemy.attack = enemy.attack * difficultyMultiplier * bossMultiplier;
-    //    enemy.defense = enemy.defense * difficultyMultiplier * bossMultiplier;
-    //    enemy.xpDrops = enemy.xpDrops * difficultyMultiplier * bossMultiplier;
-    //
-    //    Debug.Log($"Health: {enemy.health}, Max Health: {enemy.maxHealth}, Attack: {enemy.attack}, Defense: {enemy.defense}," +
-    //        $"XPDrop: {enemy.xpDrops}");
-    //}
 
     public void AdjustEnemyStats(Enemy enemy, int bossKills, bool isBoss)
     {

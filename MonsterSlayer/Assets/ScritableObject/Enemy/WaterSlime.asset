@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WaterSlime
   m_EditorClassIdentifier: 
   element: 2
-  names: Water Slime
   level: 1
+  enemySprite: {fileID: -1587331210, guid: 29d20334e2e833b4eb9e03cf31e6f5e7, type: 3}
+  names: Water Slime
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: -1587331210, guid: 29d20334e2e833b4eb9e03cf31e6f5e7, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

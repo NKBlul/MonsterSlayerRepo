@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Demonling
   m_EditorClassIdentifier: 
   element: 0
-  names: Demonling
   level: 1
+  enemySprite: {fileID: -1360416071, guid: 29d139765794b294c9bc5aaba502b16e, type: 3}
+  names: Demonling
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: -1360416071, guid: 29d139765794b294c9bc5aaba502b16e, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

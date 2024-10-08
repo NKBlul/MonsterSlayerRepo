@@ -11,4 +11,5 @@ public class EnemyStatsSO : CharacterStatsSO
     public float defense;
     public float xpDrop;
     public float difficultyMultiplier;
+    public int coinDrop;
 }

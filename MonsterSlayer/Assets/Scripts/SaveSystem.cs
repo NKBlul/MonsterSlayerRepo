@@ -11,7 +11,8 @@ public static class SaveSystem
         {
             playerData = new PlayerData(player),
             enemyData = new EnemyData(enemy),
-            enemyKilled = gameManager.enemyKilled
+            enemyKilled = gameManager.enemyKilled,
+            coins = UIManager.instance.coin,
         };
 
         string json = JsonUtility.ToJson(data, true);
@@ -44,6 +45,7 @@ public class SaveData
     public PlayerData playerData;
     public EnemyData enemyData;
     public int enemyKilled;
+    public int coins;
 }
 
 [System.Serializable]
@@ -80,6 +82,7 @@ public class EnemyData
     public Elements element;
     public int level;
     public float health, maxHealth, attack, defense, xpDrops;
+    public int coinDrop;
 
     public EnemyData(Enemy enemy)
     {
@@ -92,5 +95,6 @@ public class EnemyData
         maxHealth = enemy.maxHealth;
         defense = enemy.defense;
         xpDrops = enemy.xpDrops;
+        coinDrop = enemy.coinDrops;
     }
 }

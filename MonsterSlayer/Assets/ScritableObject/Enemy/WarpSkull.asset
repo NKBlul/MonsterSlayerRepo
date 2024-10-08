@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WarpSkull
   m_EditorClassIdentifier: 
   element: 6
-  names: Warp Skull
   level: 1
+  enemySprite: {fileID: 1368417852, guid: 8d658b7952bbf094786502949e759bf7, type: 3}
+  names: Warp Skull
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: 1368417852, guid: 8d658b7952bbf094786502949e759bf7, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

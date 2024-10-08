@@ -15,6 +15,7 @@ public class Enemy : BaseCharacter
     public float defense;
     public bool canBeHurt;
     public float xpDrops;
+    public int coinDrops;
     public event Action<float> OnEnemyDeath;
 
     private void Start()
@@ -35,6 +36,7 @@ public class Enemy : BaseCharacter
         maxHealth = enemyStats.maxHealth;
         defense = enemyStats.defense;
         xpDrops = enemyStats.xpDrop;
+        coinDrops = enemyStats.coinDrop;
 
         canBeHurt = true;
     }
@@ -54,6 +56,7 @@ public class Enemy : BaseCharacter
         health -= damage;
         Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
         UIManager.instance.UpdateHealthBar(health, maxHealth);
+        UIManager.instance.UpdateCoinText(coinDrops);
         if (health <= 0)
         {
             OnDie();

@@ -21,3 +21,4 @@ MonoBehaviour:
   defense: 5
   xpDrop: 150
   difficultyMultiplier: 0
+  coinDrop: 5

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: 
   element: 0
-  names: Skeleton
   level: 1
+  enemySprite: {fileID: 2081031599, guid: 88d524948c703864c95cad5f9e8bf282, type: 3}
+  names: Skeleton
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: 2081031599, guid: 88d524948c703864c95cad5f9e8bf282, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

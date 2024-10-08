@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Necromancer
   m_EditorClassIdentifier: 
   element: 6
-  names: Necromancer
   level: 1
+  enemySprite: {fileID: 1321254938, guid: c820e5160710cfe4787ca05a22b7ba1d, type: 3}
+  names: Necromancer
   health: 60
   maxHealth: 60
-  attack: 10
   defense: 3
-  enemySprite: {fileID: 1321254938, guid: c820e5160710cfe4787ca05a22b7ba1d, type: 3}
   xpDrop: 20
   difficultyMultiplier: 0
+  coinDrop: 1

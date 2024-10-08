@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1220911520745877711}
   - component: {fileID: 101018383850366093}
   - component: {fileID: 5306946062656648608}
+  - component: {fileID: -6883471275552957077}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -115,6 +116,7 @@ MonoBehaviour:
   level: 0
   enemyStats: {fileID: 0}
   spriteRenderer: {fileID: 1220911520745877711}
+  animator: {fileID: -6883471275552957077}
   names: 
   health: 0
   maxHealth: 0
@@ -122,3 +124,24 @@ MonoBehaviour:
   canBeHurt: 0
   xpDrops: 5
   coinDrops: 0
+--- !u!95 &-6883471275552957077
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330223552264547028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55ccc11984220e14e9bee0667d0be380, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -22,3 +22,4 @@ MonoBehaviour:
   xpDrop: 20
   difficultyMultiplier: 0
   coinDrop: 1
+  clip: {fileID: 7400000, guid: 0ddff1bce5917bd4ca5492bf5480ff21, type: 2}

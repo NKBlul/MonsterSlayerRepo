@@ -12,4 +12,5 @@ public class EnemyStatsSO : CharacterStatsSO
     public float xpDrop;
     public float difficultyMultiplier;
     public int coinDrop;
+    public AnimationClip clip;
 }

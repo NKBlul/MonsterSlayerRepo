@@ -9,6 +9,7 @@ public class Enemy : BaseCharacter
     public EnemyStatsSO enemyStats;
 
     public SpriteRenderer spriteRenderer;
+    public Animator animator;
     public string names;
     public float health;
     public float maxHealth;
@@ -20,7 +21,8 @@ public class Enemy : BaseCharacter
 
     private void Start()
     {
-
+        animator.Play(enemyStats.clip.name);
+        Debug.Log(enemyStats.clip.name);
     }
 
     public void InitializeEnemy(EnemyStatsSO stats)

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 330223552264547028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93b69f8d64c9b7478b30339af0df7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea: {x: 3, y: 3, z: 0}
+  touchArea: {x: 5, y: 5, z: 0}
 --- !u!114 &5306946062656648608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +121,4 @@ MonoBehaviour:
   defense: 0
   canBeHurt: 0
   xpDrops: 5
+  coinDrops: 0

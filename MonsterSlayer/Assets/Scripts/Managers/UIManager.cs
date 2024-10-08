@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI enemyNameText;
+    public TextMeshProUGUI enemyHpText;
 
     public Image healthBar;
 
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
     public void UpdateHealthBar(float health, float maxHealth)
     {
         healthBar.fillAmount = health / maxHealth;
+        enemyHpText.text = $"{FormatNumber(health)}/{FormatNumber(maxHealth)}";
         Debug.Log("Healthbar fill amount: " + healthBar.fillAmount);
     }
 

@@ -22,7 +22,6 @@ public class Enemy : BaseCharacter
     private void Start()
     {
         animator.Play(enemyStats.clip.name);
-        Debug.Log(enemyStats.clip.name);
     }
 
     public void InitializeEnemy(EnemyStatsSO stats)

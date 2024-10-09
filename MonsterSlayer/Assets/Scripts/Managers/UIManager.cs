@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI enemyHpText;
 
     public Image healthBar;
+
+    public RectTransform upgradeGO;
+    public Image arrow;
+    public Sprite upArrow;
+    public Sprite downArrow;
+    public Vector3 upgradeOpenPos;
+    public Vector3 upgradeClosedPos;
+    public bool upgradeUp = false;
 
     public int coin;
 
@@ -44,6 +53,22 @@ public class UIManager : MonoBehaviour
     {
         coin += coinReceived;
         coinText.text = FormatNumber(coin);
+    }
+
+    public void OnUpgradePressed()
+    {
+        if (upgradeUp) 
+        {
+            upgradeGO.DOAnchorPos(upgradeClosedPos, 0.5f);
+            arrow.sprite = upArrow;
+            upgradeUp = false;
+        }
+        else
+        {
+            upgradeGO.DOAnchorPos(upgradeOpenPos, 0.5f);
+            arrow.sprite = downArrow;
+            upgradeUp = true;
+        }
     }
 
     public string FormatNumber(float numberToFormat, int decimalPlaces = 2)

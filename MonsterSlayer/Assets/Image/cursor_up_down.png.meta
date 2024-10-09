@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4666a664d450a0645afa980511eab906
+guid: f2d7a67a21e94eb4a95fdd5d7b64ecda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterElemental_0
+      name: cursor_up_down_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 37
+        y: 144
+        width: 182
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71411cddbaea4f744be646216093c6a2
-      internalID: 1050595106
+      spriteID: 7d45f1ed51d4b70469d854064e198cd4
+      internalID: -1422852140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_1
+      name: cursor_up_down_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 37
+        y: 12
+        width: 182
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,50 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7662176c3a6d64541b66e80158f15aa5
-      internalID: 2087424496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterElemental_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e1774bc5317773499bcbc8bbd038faf
-      internalID: 567479167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterElemental_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4284fe7f30ca4c46961e5a2b18f98e7
-      internalID: 1950005596
+      spriteID: ac65cad4a17065f429be72cea6516c47
+      internalID: -1904044920
       vertices: []
       indices: 
       edges: []
@@ -230,10 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WaterElemental_0: 1050595106
-      WaterElemental_1: 2087424496
-      WaterElemental_2: 567479167
-      WaterElemental_3: 1950005596
+      cursor_up_down_0: -1422852140
+      cursor_up_down_1: -1904044920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

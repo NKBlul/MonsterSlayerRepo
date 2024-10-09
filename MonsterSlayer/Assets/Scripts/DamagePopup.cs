@@ -28,11 +28,11 @@ public class DamagePopup : MonoBehaviour
 
         transform.position += new Vector3(moveXSpeed, moveYSpeed) * Time.deltaTime;
         popUpTime -= Time.deltaTime;
+        float dissapearSpeed = 5f;
+        damageText.fontSize -= dissapearSpeed * Time.deltaTime;
         if (popUpTime < 0)
         {
-            float dissapearSpeed = 3f;
             textColor.a -= dissapearSpeed * Time.deltaTime;
-            damageText.fontSize -= dissapearSpeed * Time.deltaTime;
             damageText.color = textColor;
             if (damageText.color.a <= 0)
             {

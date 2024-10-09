@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : BaseCharacter
@@ -45,6 +44,7 @@ public class Player : BaseCharacter
 
         // Calculate the damage using the weapon's attack power and element
         float damage = calculateDamage(this, enemy, elementUsed, enemy.element);
+        DamagePopup.CreateDamagePopup(enemy.transform.position, damage);
         enemy.OnTakeDamage(damage);
     }
 

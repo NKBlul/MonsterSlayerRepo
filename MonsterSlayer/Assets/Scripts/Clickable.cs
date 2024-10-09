@@ -30,7 +30,6 @@ public class Clickable : MonoBehaviour
             if (IsInTouchArea(mousePos) && enemy.canBeHurt)
             {
                 player.DealDamage(enemy);
-               // Debug.Log(mousePos);
             }
         }
 

@@ -1642,7 +1642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -600}
+  m_AnchoredPosition: {x: 0, y: -525}
   m_SizeDelta: {x: 160, y: 16}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1433552435
@@ -2300,8 +2300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 930}
-  m_SizeDelta: {x: 640, y: 80}
+  m_AnchoredPosition: {x: 0, y: 1005}
+  m_SizeDelta: {x: 700, y: 80}
   m_Pivot: {x: 0.5, y: -1}
 --- !u!114 &1833770141
 MonoBehaviour:
@@ -2741,6 +2741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8899974110190229033, guid: 6961f74353ed85f45b36e28d0d729e57, type: 3}
   enemyPrefab: {fileID: 330223552264547028, guid: bf5311cea053b9b408a5d53fd6164228, type: 3}
+  damagePopupPrefab: {fileID: 5758057857722024956, guid: d0e6b8dc18b7c99408b8ec67976a0c95, type: 3}
   basicEnemy:
   - {fileID: 11400000, guid: 74e5f81cf0d8c8f4c8ded1d788e5fd75, type: 2}
   - {fileID: 11400000, guid: f807a89799de2e247b1428214d75b8cf, type: 2}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -44,6 +45,7 @@ public class SaveData
 {
     public PlayerData playerData;
     public EnemyData enemyData;
+    public List<Upgrades> upgrades;
     public int enemyKilled;
     public int coins;
 }

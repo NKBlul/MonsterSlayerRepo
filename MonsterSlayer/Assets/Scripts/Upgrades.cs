@@ -1,3 +1,5 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,12 @@ public class Upgrades : MonoBehaviour
     public Image icon;
     public float statModifier;
 
+    public TextMeshProUGUI upgradeNameText;
+    public TextMeshProUGUI upgradeDescriptionText;
+    public TextMeshProUGUI upgradeCostText;
+
+    public Button button;
+
     private void Awake()
     {
         upgradeName = upgradeSO.upgradeName;
@@ -24,10 +32,35 @@ public class Upgrades : MonoBehaviour
         currentCost = upgradeSO.currentCost;
         statModifier = upgradeSO.statModifier;
         icon.sprite = upgradeSO.upgradeIcon;
+
+        upgradeNameText.text = upgradeName;
+
+        button.onClick.AddListener(UpgradePowerUp);
+
     }
 
-    public float GetUpgradeCost()
+    private float CalculateUpgradeCost(int level)
     {
-        return (0.5f * Mathf.Pow(baseCost, 1.5f)) + 15.0f;
+        // Scale the cost dynamically based on current level
+        float scalingFactor = 2f;  // Adjust this to fine-tune the scaling curve
+        float cost = baseCost * Mathf.Pow(scalingFactor, level - 1);
+        return Mathf.Round(cost);  // Round to the nearest whole number
+    }
+
+    public void UpgradePowerUp()
+    {
+        if (currentLevel < maxLevel)
+        {
+            currentLevel += 1;
+            currentCost = CalculateUpgradeCost(currentLevel);
+            //upgradeCostText.text = $"Cost: {currentCost}";
+
+            // Optional: apply the stat modifier logic or other upgrade effects here
+            Debug.Log($"New Cost at Level {currentLevel}: {currentCost}");
+        }
+        else
+        {
+            Debug.Log("Max Level Reached");
+        }
     }
 }

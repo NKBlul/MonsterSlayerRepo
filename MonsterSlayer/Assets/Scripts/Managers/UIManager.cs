@@ -22,7 +22,8 @@ public class UIManager : MonoBehaviour
     public Vector3 upgradeClosedPos;
     public bool upgradeUp = false;
 
-    public int coin;
+    public float coin;
+    public float coinMultiplier;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        coinMultiplier = 1f;
     }
 
     public void SetEnemyName(string enemyName)
@@ -49,8 +52,9 @@ public class UIManager : MonoBehaviour
         Debug.Log("Healthbar fill amount: " + healthBar.fillAmount);
     }
 
-    public void UpdateCoinText(int coinReceived)
+    public void UpdateCoinText(float coinReceived)
     {
+        Debug.Log("Coin received: " + coinReceived);
         coin += coinReceived;
         coinText.text = FormatNumber(coin);
     }

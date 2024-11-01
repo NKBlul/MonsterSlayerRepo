@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: IncreaseCoinDrop
   upgradeDescription: 
-  currentLevel: 1
+  currentLevel: 0
   maxLevel: 10
   baseCost: 5
   currentCost: 0
   upgradeIcon: {fileID: -671292115, guid: 3e31f4c1ca8a0d141a098167c3762279, type: 3}
-  statModifier: 0
+  upgradeType: 0

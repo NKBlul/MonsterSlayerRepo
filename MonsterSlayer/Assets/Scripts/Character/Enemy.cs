@@ -57,7 +57,7 @@ public class Enemy : BaseCharacter
         health -= damage;
         Debug.Log($"Damage dealth: {damage}, remaining health: {health}");
         UIManager.instance.UpdateHealthBar(health, maxHealth);
-        UIManager.instance.UpdateCoinText(coinDrops);
+        UIManager.instance.UpdateCoinText(coinDrops * UIManager.instance.coinMultiplier);
         if (health <= 0)
         {
             OnDie();

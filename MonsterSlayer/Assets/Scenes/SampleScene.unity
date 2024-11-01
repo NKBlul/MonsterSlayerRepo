@@ -622,17 +622,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &421986395 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6625038074995900826, guid: b2542d2cec036d5449a1dc33d7ec7aac, type: 3}
-  m_PrefabInstance: {fileID: 687991432806406508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,17 +2905,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2100260378 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8191138351004843738, guid: b2542d2cec036d5449a1dc33d7ec7aac, type: 3}
-  m_PrefabInstance: {fileID: 687991432806406508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &687991432806406508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2939,14 +2917,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade
       objectReference: {fileID: 0}
-    - target: {fileID: 8031115465340465458, guid: b2542d2cec036d5449a1dc33d7ec7aac, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 421986395}
-    - target: {fileID: 8031115465340465458, guid: b2542d2cec036d5449a1dc33d7ec7aac, type: 3}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 2100260378}
     - target: {fileID: 8031115465340465458, guid: b2542d2cec036d5449a1dc33d7ec7aac, type: 3}
       propertyPath: upgradeSO
       value: 

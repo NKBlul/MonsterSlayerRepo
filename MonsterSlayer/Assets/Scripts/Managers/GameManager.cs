@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
             // Load other game progress
             enemyKilled = saveData.enemyKilled;
             UIManager.instance.UpdateCoinText(saveData.coins);
+            UIManager.instance.coinMultiplier = saveData.coinMultiplier;
         }
         else
         {

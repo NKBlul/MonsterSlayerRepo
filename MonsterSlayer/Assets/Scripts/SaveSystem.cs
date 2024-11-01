@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class SaveSystem
 {
@@ -14,6 +15,7 @@ public static class SaveSystem
             enemyData = new EnemyData(enemy),
             enemyKilled = gameManager.enemyKilled,
             coins = UIManager.instance.coin,
+            coinMultiplier = UIManager.instance.coinMultiplier,
         };
 
         foreach (var upgrade in UpgradeManager.instance.upgrades)
@@ -42,7 +44,14 @@ public static class SaveSystem
                 {
                     upgrade.currentLevel = savedUpgrade.currentLevel;
                     upgrade.currentCost = savedUpgrade.currentCost;
-                    upgrade.button.interactable = savedUpgrade.isUnlocked; // Enable/disable based on unlock status
+                    if (upgrade.currentLevel == 0)
+                    {
+                        upgrade.currentCost = upgrade.baseCost;
+                    }
+                    else if (upgrade.currentLevel == upgrade.maxLevel)
+                    {
+                        upgrade.button.interactable = false;
+                    }
                 }
             }
             return data;
@@ -63,7 +72,8 @@ public class SaveData
     public EnemyData enemyData;
     public List<UpgradeData> upgrades;
     public int enemyKilled;
-    public int coins;
+    public float coins;
+    public float coinMultiplier;
     public SaveData()
     {
         upgrades = new List<UpgradeData>();
@@ -127,6 +137,7 @@ public class UpgradeData
     public string upgradeName;
     public int currentLevel;
     public float currentCost;
+    public UpgradeType upgradeType;
     public bool isUnlocked;
 
     public UpgradeData(Upgrades upgrade)
@@ -134,6 +145,7 @@ public class UpgradeData
         upgradeName = upgrade.upgradeName;
         currentLevel = upgrade.currentLevel;
         currentCost = upgrade.currentCost;
-        isUnlocked = upgrade.currentLevel > 0; // If it has a level, consider it unlocked
+        upgradeType = upgrade.upgradeSO.upgradeType;
+        //isUnlocked = upgrade.currentLevel > 0; // If it has a level, consider it unlocked
     }
 }

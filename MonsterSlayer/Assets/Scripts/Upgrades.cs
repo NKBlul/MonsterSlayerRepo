@@ -101,16 +101,19 @@ public class Upgrades : MonoBehaviour
 
     void HandleIncreaseDamageDealtUpgrade()
     {
+        GameManager.instance.player.attack += 3;
         Debug.Log($"Increase Damage dealt");
     }
 
     void HandleMineUpgrade()
     {
+
         Debug.Log($"Mine");
     }
 
     void HandleCompanionUpgrade()
     {
+
         Debug.Log("Companion");
     }
 }

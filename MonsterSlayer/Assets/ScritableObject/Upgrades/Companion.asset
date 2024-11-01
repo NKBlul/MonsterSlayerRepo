@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bcfe4837dd78848b7ff93fdabdca0e, type: 3}
   m_Name: Companion
   m_EditorClassIdentifier: 
-  upgradeName: 
+  upgradeName: Companion
   upgradeDescription: 
   currentLevel: 0
   maxLevel: 0

@@ -79,7 +79,7 @@ public class Upgrades : MonoBehaviour
                         HandleMineUpgrade();
                         break;
                     case UpgradeType.Companion:
-                        HandleMineUpgrade();
+                        HandleCompanionUpgrade();
                         break;
                 }
             }
@@ -107,13 +107,19 @@ public class Upgrades : MonoBehaviour
 
     void HandleMineUpgrade()
     {
-
+        if (currentLevel == 1)
+        {
+            GameObject companion = Instantiate(GameManager.instance.minePrefab, Vector2.zero, Quaternion.identity);
+        }
         Debug.Log($"Mine");
     }
 
     void HandleCompanionUpgrade()
     {
-
+        if (currentLevel == 1)
+        {
+            GameObject companion = Instantiate(GameManager.instance.companionPrefab, Vector2.zero, Quaternion.identity);
+        }
         Debug.Log("Companion");
     }
 }

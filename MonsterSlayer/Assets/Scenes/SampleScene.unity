@@ -3224,6 +3224,9 @@ MonoBehaviour:
   playerPrefab: {fileID: 8899974110190229033, guid: 6961f74353ed85f45b36e28d0d729e57, type: 3}
   enemyPrefab: {fileID: 330223552264547028, guid: bf5311cea053b9b408a5d53fd6164228, type: 3}
   damagePopupPrefab: {fileID: 5758057857722024956, guid: d0e6b8dc18b7c99408b8ec67976a0c95, type: 3}
+  coinPopupPrefab: {fileID: 7507175813606657530, guid: 4743633d4977db64ea427bec22674f4b, type: 3}
+  companionPrefab: {fileID: 6520796488092987950, guid: a6ffea28ac9a1d143ac41823928d79cd, type: 3}
+  minePrefab: {fileID: 5927037660494710901, guid: 36a3dfd9c5996924aa226050f7194d1d, type: 3}
   basicEnemy:
   - {fileID: 11400000, guid: 74e5f81cf0d8c8f4c8ded1d788e5fd75, type: 2}
   - {fileID: 11400000, guid: f807a89799de2e247b1428214d75b8cf, type: 2}

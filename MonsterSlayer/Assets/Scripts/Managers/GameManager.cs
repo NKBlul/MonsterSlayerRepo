@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject enemyPrefab;
     public GameObject damagePopupPrefab;
+    public GameObject coinPopupPrefab;
+    public GameObject companionPrefab;
+    public GameObject minePrefab;
 
     [SerializeField] List<EnemyStatsSO> basicEnemy;
     [SerializeField] List<EnemyStatsSO> bossEnemy;

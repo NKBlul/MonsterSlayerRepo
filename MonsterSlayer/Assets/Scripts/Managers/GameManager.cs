@@ -123,6 +123,24 @@ public class GameManager : MonoBehaviour
             enemyKilled = saveData.enemyKilled;
             UIManager.instance.UpdateCoinText(saveData.coins);
             UIManager.instance.coinMultiplier = saveData.coinMultiplier;
+
+            // Instantiate and load companion data if available
+            if (saveData.companionData != null)
+            {
+                GameObject companionObject = Instantiate(companionPrefab);
+                Companion companion = companionObject.GetComponent<Companion>();
+                companion.attackSpeed = saveData.companionData.attackSpeed;
+                companion.damage = saveData.companionData.damage;
+            }
+
+            // Instantiate and load mine data if available
+            if (saveData.mineData != null)
+            {
+                GameObject mineObject = Instantiate(minePrefab);
+                Mine mine = mineObject.GetComponent<Mine>();
+                mine.coinIncrease = saveData.mineData.coinIncrease;
+                mine.mineTime = saveData.mineData.mineTime;
+            }
         }
         else
         {

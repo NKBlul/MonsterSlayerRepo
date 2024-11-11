@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public static class SaveSystem
@@ -16,6 +17,8 @@ public static class SaveSystem
             enemyKilled = gameManager.enemyKilled,
             coins = UIManager.instance.coin,
             coinMultiplier = UIManager.instance.coinMultiplier,
+            companionData = gameManager.companionPrefab != null ? new CompanionData(gameManager.companionPrefab.GetComponent<Companion>()) : null,
+            mineData = gameManager.minePrefab != null ? new MineData(gameManager.minePrefab.GetComponent<Mine>()) : null
         };
 
         foreach (var upgrade in UpgradeManager.instance.upgrades)
@@ -74,6 +77,8 @@ public class SaveData
     public int enemyKilled;
     public float coins;
     public float coinMultiplier;
+    public CompanionData companionData;
+    public MineData mineData;
     public SaveData()
     {
         upgrades = new List<UpgradeData>();
@@ -147,5 +152,31 @@ public class UpgradeData
         currentCost = upgrade.currentCost;
         upgradeType = upgrade.upgradeSO.upgradeType;
         //isUnlocked = upgrade.currentLevel > 0; // If it has a level, consider it unlocked
+    }
+}
+
+[System.Serializable]
+public class CompanionData
+{
+    public float attackSpeed;
+    public float damage;
+
+    public CompanionData(Companion companion)
+    {
+        attackSpeed = companion.attackSpeed;
+        damage = companion.damage;
+    }
+}
+
+[System.Serializable]
+public class MineData
+{
+    public int coinIncrease;
+    public float mineTime;
+
+    public MineData(Mine mine)
+    {
+        coinIncrease = mine.coinIncrease;
+        mineTime = mine.mineTime;
     }
 }
